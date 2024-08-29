@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    <head>
+        <meta charset="utf-8" />
+        <!-- utf-8 works for most cases -->
+        <meta name="viewport" content="width=device-width" />
+        <!-- Forcing initial-scale shouldn't be necessary -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Use the latest (edge) version of IE rendering engine -->
+        <meta name="x-apple-disable-message-reformatting" />
+        <!-- Disable auto-scale in iOS 10 Mail entirely -->
+        <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no" />
+        <!-- Tell iOS not to automatically link certain text strings. -->
+        <meta name="color-scheme" content="light" />
+        <meta name="supported-color-schemes" content="light" />
+        <title>%%=v(@title)=%%</title>
+        <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+        <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+        <!--[if gte mso 9]>
+            <xml>
+                <o:OfficeDocumentSettings>
+                    <o:AllowPNG />
+                    <o:PixelsPerInch>96</o:PixelsPerInch>
+                </o:OfficeDocumentSettings>
+            </xml>
+        <![endif]-->
+
+        <!-- Web Font / @font-face : BEGIN -->
+        <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+        <!--[if mso]>
+            <style type="text/css">
+                body,
+                table,
+                td,
+                a,
+                h1,
+                h2,
+                p,
+                b,
+                span {
+                    font-family: Arial, Helvetica, sans-serif !important;
+                }
+                b {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: 700 !important;
+                }
+            </style>
+        <![endif]-->
+
+        <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+        <!--[if !mso]><!-->
+        <link rel="stylesheet" href="https://use.typekit.net/uhk6msu.css" />
+        <!--<![endif]-->
+
+        <!-- Web Font / @font-face : END -->
+
+        <!-- Makes bullets consitent in IE -->
+
+        <!--[if gte mso 9]>
+            <style>
+                li {
+                    text-indent: -1em; /* Normalise space between bullets and text */
+                }
+
+                ul {
+                    margin-top: 0px !important;
+                    margin-left: 15px !important;
+                    padding: 0 !important;
+                    list-style-position: inside !important;
+                }
+
+                sub {
+                    line-height: 100%;
+                    font-size: 100%;
+                }
+            </style>
+        <![endif]-->
+
+        <!-- CSS Reset : BEGIN -->
+        <style>
+            /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+            :root {
+                color-scheme: light;
+                supported-color-schemes: light;
+            }
+
+            /* What it does: Remove spaces around the email design added by some email clients. */
+            /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+            html,
+            body {
+                margin: 0 auto !important;
+                padding: 0 !important;
+                width: 100% !important;
+            }
+
+            /* What it does: Stops email clients resizing small text. */
+            * {
+                -ms-text-size-adjust: 100%;
+                -webkit-text-size-adjust: 100%;
+            }
+
+            .pd-valign > * {
+                vertical-align: middle !important;
+            }
+
+            /* What it does: Centers email on Android 4.4 */
+            /* div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        } */
+            /* What it does: forces Samsung Android mail clients to use the entire viewport */
+            #MessageViewBody,
+            #MessageWebViewDiv {
+                width: 100% !important;
+            }
+
+            /* What it does: Stops Outlook from adding extra spacing to tables. */
+            table,
+            td {
+                mso-table-lspace: 0pt !important;
+                mso-table-rspace: 0pt !important;
+            }
+
+            /* What it does: Fixes webkit padding issue. */
+            table {
+                border-spacing: 0 !important;
+                border-collapse: collapse !important;
+                table-layout: fixed !important;
+                margin: 0 auto !important;
+            }
+
+            /* What it does: Uses a better rendering method when resizing images in IE. */
+            img {
+                -ms-interpolation-mode: bicubic;
+            }
+
+            /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+            a {
+                text-decoration: none;
+            }
+
+            .ii a[href] {
+                color: inherit !important;
+            }
+
+            /* What it does: A work-around for email clients meddling in triggered links. */
+            a[x-apple-data-detectors],
+        /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+                border-bottom: 0 !important;
+                cursor: default !important;
+                color: inherit !important;
+                text-decoration: none !important;
+                font-size: inherit !important;
+                font-family: inherit !important;
+                font-weight: inherit !important;
+                line-height: inherit !important;
+            }
+
+            /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+            .im {
+                color: inherit !important;
+            }
+
+            /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+            .a6S {
+                display: none !important;
+                opacity: 0.01 !important;
+            }
+
+            /* If the above doesn't work, add a .g-img class to any image in question. */
+            img.g-img + div {
+                display: none !important;
+            }
+
+            /* .hide-mobile {
+          display: inline-block !important;
+          max-height: none !important;
+        } */
+
+            .hide-desktop {
+                display: none !important;
+                max-height: 0 !important;
+            }
+
+            b,
+            strong {
+                font-weight: 900 !important;
+            }
+
+            /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+            /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+            /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+            @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+                u ~ div .email-container {
+                    min-width: 320px !important;
+                }
+            }
+
+            /* iPhone 6, 6S, 7, 8, and X */
+            @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+                u ~ div .email-container {
+                    min-width: 375px !important;
+                }
+            }
+
+            /* iPhone 6+, 7+, and 8+ */
+            @media only screen and (min-device-width: 414px) {
+                u ~ div .email-container {
+                    min-width: 414px !important;
+                }
+            }
+        </style>
+        <!-- CSS Reset : END -->
+
+        <!-- Progressive Enhancements : BEGIN -->
+        <style>
+            /* What it does: Hover styles for buttons */
+            .button-td,
+            .button-a {
+                transition: all 100ms ease-in;
+            }
+
+            .button-td-primary:hover,
+            .button-a-primary:hover {
+                background: #ffa500 !important;
+                border-color: #ffa500 !important;
+            }
+
+            /* Media Queries */
+            @media screen and (max-width: 680px) {
+                /* What it does: Forces table cells into full-width rows. */
+                .stack-column,
+                .stack-column-center {
+                    display: block !important;
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    direction: ltr !important;
+                }
+
+                /* What it does: Forces table cells into full-width rows. */
+                .stack-column-alt,
+                .stack-column-6 {
+                    display: inline-block !important;
+                    width: auto !important;
+                    direction: ltr !important;
+                }
+
+                /* And center justify these ones. */
+                .stack-column-center {
+                    text-align: left !important;
+                }
+
+                .stack-column-alt,
+                .stack-column-6 {
+                    text-align: center !important;
+                }
+
+                .pd-mobile-shift {
+                    padding-top: 0 !important;
+                }
+
+                /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+                .center-on-narrow {
+                    text-align: center !important;
+                    display: block !important;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                    float: none !important;
+                }
+
+                .left-on-narrow {
+                    text-align: center !important;
+                    display: block !important;
+                    /* margin-left: auto !important; */
+                    margin-right: auto !important;
+                    float: none !important;
+                }
+
+                .logo-center-on-narrow {
+                    float: left !important;
+                    margin-left: 0 !important;
+                    margin-right: 10px !important;
+                }
+
+                table.center-on-narrow {
+                    display: inline-block !important;
+                }
+
+                .hide-mobile {
+                    display: none !important;
+                    width: 0 !important;
+                    height: 0 !important;
+                    max-width: 0 !important;
+                    max-height: 0 !important;
+                    overflow: hidden !important;
+                }
+
+                .hide-desktop {
+                    display: inline-block !important;
+                    max-height: none !important;
+                }
+
+                .pd-center-padding {
+                    padding-left: 20px !important;
+                    padding-right: 20px !important;
+                }
+
+                .pd-center-padding-small {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
+
+                .pd-center-padding-footer {
+                    padding-left: 10px !important;
+                    padding-right: 10px !important;
+                }
+
+                .pd-center-padding-footer-alt {
+                    padding-left: 5px !important;
+                    padding-right: 5px !important;
+                }
+
+                .pd-disclaimer p {
+                    font-size: 15px !important;
+                    line-height: 21px !important;
+                }
+
+                img.fluid {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    height: auto !important;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+            }
+        </style>
+
+        <style>
+            /* Media Queries */
+            @media screen and (max-width: 680px) {
+                .pl-0 {
+                    padding-left: 0 !important;
+                }
+
+                .pl-1 {
+                    padding-left: 10px !important;
+                }
+
+                .pl-2 {
+                    padding-left: 20px !important;
+                }
+
+                .pl-3 {
+                    padding-left: 30px !important;
+                }
+
+                .pl-4 {
+                    padding-left: 40px !important;
+                }
+
+                .pl-5 {
+                    padding-left: 50px !important;
+                }
+
+                .pt-0 {
+                    padding-top: 0 !important;
+                }
+
+                .pt-1 {
+                    padding-top: 10px !important;
+                }
+
+                .pt-2 {
+                    padding-top: 20px !important;
+                }
+
+                .pt-3 {
+                    padding-top: 30px !important;
+                }
+
+                .pt-4 {
+                    padding-top: 40px !important;
+                }
+
+                .pt-5 {
+                    padding-top: 50px !important;
+                }
+
+                .pr-0 {
+                    padding-right: 0 !important;
+                }
+
+                .pr-1 {
+                    padding-right: 10px !important;
+                }
+
+                .pr-2 {
+                    padding-right: 20px !important;
+                }
+
+                .pr-3 {
+                    padding-right: 30px !important;
+                }
+
+                .pr-4 {
+                    padding-right: 40px !important;
+                }
+
+                .pr-5 {
+                    padding-right: 50px !important;
+                }
+
+                .pb-0 {
+                    padding-bottom: 0 !important;
+                }
+
+                .pb-1 {
+                    padding-bottom: 10px !important;
+                }
+
+                .pb-2 {
+                    padding-bottom: 20px !important;
+                }
+
+                .pb-3 {
+                    padding-bottom: 30px !important;
+                }
+
+                .pb-4 {
+                    padding-bottom: 40px !important;
+                }
+
+                .pb-5 {
+                    padding-bottom: 50px !important;
+                }
+
+                .px-0 {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
+
+                .px-1 {
+                    padding-left: 10px !important;
+                    padding-right: 10px !important;
+                }
+
+                .px-2 {
+                    padding-left: 20px !important;
+                    padding-right: 20px !important;
+                }
+
+                .px-3 {
+                    padding-left: 30px !important;
+                    padding-right: 30px !important;
+                }
+
+                .px-4 {
+                    padding-left: 40px !important;
+                    padding-right: 40px !important;
+                }
+
+                .px-5 {
+                    padding-left: 50px !important;
+                    padding-right: 50px !important;
+                }
+
+                .py-0 {
+                    padding-top: 0 !important;
+                    padding-bottom: 0 !important;
+                }
+
+                .py-1 {
+                    padding-top: 10px !important;
+                    padding-bottom: 10px !important;
+                }
+
+                .py-2 {
+                    padding-top: 20px !important;
+                    padding-bottom: 20px !important;
+                }
+
+                .py-3 {
+                    padding-top: 30px !important;
+                    padding-bottom: 30px !important;
+                }
+
+                .py-4 {
+                    padding-top: 40px !important;
+                    padding-bottom: 40px !important;
+                }
+
+                .py-5 {
+                    padding-top: 50px !important;
+                    padding-bottom: 50px !important;
+                }
+
+                .h-sm {
+                    font-size: 28px !important;
+                }
+
+                table.margin-reset {
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                }
+
+                .w100 {
+                    width: 275px !important;
+                }
+
+                .pt8 {
+                    padding-top: 8px !important;
+                }
+
+                .pl6 {
+                    padding-left: 6px !important;
+                }
+
+                .align-left {
+                    text-align: left !important;
+                }
+
+                .align-right {
+                    text-align: right !important;
+                }
+
+                .width-80 {
+                    width: 80px !important;
+                }
+
+                /* What it does: Adjust typography on small screens to improve readability */
+                /* .email-container p {
+         font-size: 17px !important;
+     } */
+            }
+        </style>
+        <!-- Progressive Enhancements : END -->
+    </head>
+    <!--
+ The email background color (#EAEAEA) is defined in three places:
+ 1. body tag: for most email clients
+ 2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+ 3. mso conditional: For Windows 10 Mail
+-->
+
+    <body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #eaeaea">
+        <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #EAEAEA;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all" aria-hidden="true">%%=v(@pre_header)=%%</div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif">&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+        -->
+        <div style="max-width: 680px; margin: 0 auto">
+            <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+            <tr>
+            <td>
+            <![endif]-->
+            <table role="presentation" border="0" width="100%" cellpadding="0" cellspacing="0" style="width: 100%">
+                <tr>
+                    <td style="padding: 0">
+                        <!-- Start Content -->
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; margin: auto; max-width: 680px">
+                            <tr>
+                                <td class="pd-center-padding pt-2" style="background-color: #ffffff; padding-top: 20px; padding-bottom: 20px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042">
+                                    <!--[if mso]> <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%"> <tr> <td valign="top" align="left"> <![endif]-->
+                                    <table align="left" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100" style="width: 100px; float: left">
+                                        <tr>
+                                            <td align="left" style="margin: 0; text-align: left; mso-line-height-alt: 100%; mso-line-height-rule: exactly; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/e4608a20-278a-4ca5-bc4e-c151e4869481.png" alt="Meridian logo" width="104" height="22" border="0" style="width: 104px; max-width: 104px; height: auto; background: #ffffff; margin: 0; display: block" /></td>
+                                        </tr>
+                                    </table>
+                                    <!--[if mso]> </td> <td valign="top" align="right"> <![endif]-->
+                                    <table align="right" role="presentation" border="0" cellpadding="0" cellspacing="0" width="148" style="width: 148px; float: right; background-color: #ffffff">
+                                        <tr>
+                                            <td valign="middle" align="right" style="margin: 0; text-align: right; mso-line-height-alt: 100%; mso-line-height-rule: exactly; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042">
+                                                <p style="margin: 0px; margin-top: 0px; mso-line-height-alt: 100%; mso-line-height-rule: exactly; text-align: right"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/af364514-a277-4b4d-8adc-92d10c762cfa.png" alt="Meridian Monthly logo" width="144" height="22" border="0" style="width: 144px; max-width: 144px; height: auto; background: #ffffff; margin-right: 0; display: block" /></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--[if mso]> </td> </tr> </table> <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 10px; line-height: 20px; color: #414042; mso-line-height-alt: 100%; mso-line-height-rule: exactly; background: #ffffff">
+                                    <a href="https://www.ilmeridian.com/?utm_source=salesforce&utm_medium=email&utm_campaign=membership_retention&utm_term=current_medicaid_member&utm_content=september_header" target="_blank">
+                                        <img class="fluid" src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/3c0a6bb4-c714-481c-834b-2363755b273d.jpg" width="680" alt="Support for the whole family. There are several images of families." border="0" style="width: 100%; max-width: 680px; height: auto; background: #ffffff; margin: auto; display: block" />
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pd-center-padding pb-4" style="background-color: #ffffff; padding-top: 50px; padding-bottom: 50px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                    <p style="margin: 0px"><b style="font-weight: 900; font-size: 18px; line-height: 20px">sept&zwj;ember&nbsp;20&zwj;24</b></p>
+                                    <p style="margin: 0px; margin-top: 24px; font-size: 36px; line-height: 38px; color: #f36d00; font-weight: 900; letter-spacing: -0.5px">be a <i>healthy</i> role model</p>
+                                    <p style="margin: 0px; margin-top: 16px">Kids and adults today face many issues, including obesity and overdose epidemics. This month, we’re raising awareness about substance use and childhood obesity. We’re also celebrating Hispanic Heritage Month by making sure you can find a provider who speaks your&nbsp;language.</p>
+                                    <p style="margin: 0px; margin-top: 16px">This issue also has tips for grocery shopping on a budget, recipes kids will like, and much more to help you be a healthy role model for your&nbsp;family.</p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 0px; padding-bottom: 0px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; font-weight: 300; color: #414042">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="hide-mobile" style="font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/56789d98-62b7-4316-bb31-d1cdb47e729e.png" alt="Section break" width="572" style="width: 572px; height: 2px" /></td>
+                                            <!--[if !mso 9]><!-->
+                                            <td class="hide-desktop" style="display: none; mso-hide: all; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/bd3fa891-95e4-4a6d-8bc3-d285029e1dc7.png" alt="Section break" width="100%" style="mso-hide: all" /></td>
+                                            <!--<![endif]-->
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 8px; padding-bottom: 24px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                    <p style="margin: 0px; text-align: left"><b style="font-weight: 900; font-size: 18px; line-height: 20px; mso-line-height-rule: exactly; mso-line-height-alt: 120%">screenings & health advice</b></p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="mso-line-height-rule: exactly; background-color: #ffffff; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                                        <tr>
+                                            <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 0px; padding-bottom: 32px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                <!--[if !mso 9]><!-->
+                                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                    <tr>
+                                                        <td align="right" width="84" class="hide-desktop" style="display: none; mso-line-height-alt: 90%; mso-line-height-rule: exactly">
+                                                            <img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/cb78e329-4b83-4149-a80e-2c516f73222e.png" alt="Image of a man and a girl grocery shopping" width="84" style="width: 84px; max-width: 84px; height: auto; margin: 0; display: block; border: 0; outline: none; mso-line-height-alt: 100%; mso-line-height-rule: exactly" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!--<![endif]-->
+                                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left">
+                                                    <tr>
+                                                        <td class="pd-center-padding-small pt-2" align="left" style="padding-right: 16px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                            <p style="margin: 0px; font-size: 36px; line-height: 38px; color: #f36d00; font-weight: 900; letter-spacing: -0.5px"><i>healthy</i> shopping on a budget</p>
+                                                            <p style="margin: 0px; margin-top: 16px; margin-bottom: 16px">Healthy eating can be hard for some kids—and some adults! You can help your child develop good eating habits by choosing nutrient-rich foods at the grocery store. Here are some ideas to find healthy and affordable food on your next shopping&nbsp;trip:</p>
+                                                            <!--[if mso]>
+                                                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                            <tr>
+                                                            <td valign="top" align="left" width="100%">
+                                                            <![endif]-->
+                                                            <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 100%">
+                                                                <tr>
+                                                                    <td class="pd-center-padding-small" align="left" style="padding-right: 14px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                                        <!--[if mso]>
+                                                                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                                        <tr>
+                                                                        <td valign="top" align="center" width="100%">
+                                                                        <![endif]-->
+                                                                        <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 100%">
+                                                                            <tr>
+                                                                                <td class="pd-center-padding-small pl6" align="left" style="padding-left: 6px; padding-right: 0px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                        <tr>
+                                                                                            <td width="10" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">•</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Plan ahead so you know when items are on sale.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="10" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">•</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Make a shopping list and stick to it. Be sure to include healthy foods like vegetables, fruits, lean protein, and whole grains.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="10" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">•</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Canned and frozen foods cost less and are healthy. Look for items with less salt.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="10" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">•</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Avoid waste by eating fresh food soon after you buy it.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="10" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px; padding-bottom: 16px">•</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 4px; padding-bottom: 16px">Be sure to buy healthy foods that your kids like to eat.</td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <!--[if mso]>
+                                                                    </td>
+                                                                    </tr>
+                                                                    </table>
+                                                                    <![endif]-->
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!--[if mso]>
+                                                            </td>
+                                                            </tr>
+                                                            </table>
+                                                            <![endif]-->
+                                                            <p style="margin: 0px">With childhood obesity on the rise, there’s no better time to model healthy habits for your&nbsp;kids.</p>
+                                                            <p style="margin: 0px; margin-top: 16px; margin-bottom: 16px">Learn quick, healthy ways to cook the food from your shopping&nbsp;trip.</p>
+                                                            <p style="margin: 0px">
+                                                                <a href="https://ilmeridian.kramesonline.com/Search/3,S,85033?utm_source=salesforce&utm_medium=email&utm_campaign=membership_retention&utm_term=current_medicaid_member&utm_content=september_cooking" target="_blank"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/70ddfeac-40e8-48ca-8fcb-7a0a1f93c5a1.png" width="153" height="40" border="0" alt="Get cooking tips" style="width: 153px; max-width: 153px; height: auto; display: inline-block; margin: 0; padding: 0; mso-line-height-alt: 100%; mso-line-height-rule: exactly" /></a>
+                                                            </p>
+                                                        </td>
+                                                        <td align="right" valign="middle" width="180" class="hide-mobile" style="mso-line-height-alt: 120%; mso-line-height-rule: exactly; vertical-align: middle">
+                                                            <img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/30a3d072-ebb5-426c-af77-a441e3d495db.png" alt="Image of a man and a girl grocery shopping" width="180" style="width: 180px; max-width: 180px; height: auto; margin: 0; display: inline-block; border: 0; outline: none; mso-line-height-alt: 100%; mso-line-height-rule: exactly" />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="pd-center-padding pb-4" style="background-color: #ffffff; padding-top: 0px; padding-bottom: 40px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                    <p style="margin: 0px; margin-top: 0px; font-size: 36px; line-height: 38px; color: #f36d00; font-weight: 900; letter-spacing: -0.5px">learn the signs of drug <i>addiction</i>.</p>
+                                    <p style="margin: 0px; margin-top: 16px">Signs of an addiction can be hard to spot. Many people with substance use disorders (SUDs) try to hide their addiction. But <a href="https://www.cdc.gov/overdose-prevention/treatment/index.html#:~:text=In%202022%2C%20more%20than%20one,is%20strength%20in%20getting%20help" target="_blank" style="color: #414042; text-decoration: underline">according to the CDC</a>, one in six Americans has reported experiencing an&nbsp;SUD.</p>
+                                    <p style="margin: 0px; margin-top: 16px"><a href="https://ilmeridian.kramesonline.com/Search/3,S,84335?utm_source=salesforce&utm_medium=email&utm_campaign=membership_retention&utm_term=current_medicaid_member&utm_content=september_substance" target="_blank" style="color: #414042; text-decoration: underline">Early stages</a> to watch for can include experimentation or social use. People may seek out situations where the substances are present. Or they may show signs of being drawn to an activity or&nbsp;substance.</p>
+                                    <p style="margin: 0px; margin-top: 16px; margin-bottom: 24px">Once someone has moved past experimenting, it’s common to see changes in&nbsp;their:</p>
+                                    <!--[if mso]>
+                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                    <tr>
+                                    <td valign="top" align="left" width="100%">
+                                    <![endif]-->
+                                    <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 100%">
+                                        <tr>
+                                            <td class="pd-center-padding-small" align="left" style="padding-right: 0px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                <!--[if mso]>
+                                                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                <tr>
+                                                <td valign="top" align="center" width="100%">
+                                                <![endif]-->
+                                                <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 100%">
+                                                    <tr>
+                                                        <td class="pd-center-padding-small" align="left" style="padding-left: 0px; padding-right: 0px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                <tr>
+                                                                    <td class="align-right" valign="top" align="left" style="background-color: #ffffff; padding-bottom: 24px">
+                                                                        <div class="hide-desktop" style="display: none; mso-hide: all">
+                                                                            <img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/84b7a136-a46d-48d5-8e1c-986a222741de.png" alt="Personaliy" width="84" style="width: 84px; max-width: 84px; height: auto; margin: 0; display: block; border: 0; outline: none; mso-line-height-alt: 100%; mso-line-height-rule: exactly" />
+                                                                        </div>
+                                                                        <div class="hide-mobile">
+                                                                            <img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/51c1fc30-f17f-4e55-b586-385d7b31ca64.png" alt="Personaliy" width="182" style="width: 182px; max-width: 182px; height: auto; margin: 0; display: block; border: 0; outline: none; mso-line-height-alt: 100%; mso-line-height-rule: exactly" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="width-108" valign="top" align="center" style="background-color: #ffffff; padding-bottom: 24px">
+                                                                        <div class="hide-desktop" style="display: none; mso-hide: all">
+                                                                            <img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/89122421-b71e-41bb-a624-473493f8ac8a.png" alt="Physical health" width="84" style="width: 84px; max-width: 84px; height: auto; margin: 0; display: block; border: 0; outline: none; mso-line-height-alt: 100%; mso-line-height-rule: exactly" />
+                                                                        </div>
+                                                                        <div class="hide-mobile">
+                                                                            <img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/cec51ad6-d52b-4079-b4f4-6355e896806e.png" alt="Physical health" width="182" style="width: 182px; max-width: 182px; height: auto; margin: 0; display: block; border: 0; outline: none; mso-line-height-alt: 100%; mso-line-height-rule: exactly" />
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="align-left" valign="top" align="right" style="background-color: #ffffff; padding-bottom: 24px">
+                                                                        <div class="hide-desktop" style="display: none; mso-hide: all">
+                                                                            <img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/02d6e7e1-b4c8-4986-a8de-9a255edc4301.png" alt="Mental or emotional health" width="84" style="width: 84px; max-width: 84px; height: auto; margin: 0; display: block; border: 0; outline: none; mso-line-height-alt: 100%; mso-line-height-rule: exactly" />
+                                                                        </div>
+                                                                        <div class="hide-mobile">
+                                                                            <img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/c5b0978e-561b-4a25-b8cb-634b66a70dda.png" alt="Mental or emotional health" width="182" style="width: 182px; max-width: 182px; height: auto; margin: 0; display: block; border: 0; outline: none; mso-line-height-alt: 100%; mso-line-height-rule: exactly" />
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if mso]>
+                                                </td>
+                                                </tr>
+                                                </table>
+                                                <![endif]-->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                    <p style="margin: 0px">Our HALO program is designed to improve the lives of our members at risk for or diagnosed with a substance use disorder. Case managers are trained to help members access treatment and resources. Call Member Services and request to be enrolled in Care Coordination if you or a family member needs&nbsp;help.</p>
+                                    <p style="margin: 0px; margin-top: 16px">
+                                        <a href="https://www.ilmeridian.com/members/medicaid/benefits-services/behavioral-health.html?utm_source=salesforce&utm_medium=email&utm_campaign=membership_retention&utm_term=current_medicaid_member&utm_content=september_halo_program" target="_blank"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/1e619386-0848-48ce-81f0-f835aa72a9b1.png" width="122" height="40" border="0" alt="Learn more" style="width: 122px; max-width: 122px; height: auto; display: inline-block; margin: 0; padding: 0; mso-line-height-alt: 100%; mso-line-height-rule: exactly" /></a>
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 0px; padding-bottom: 0px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; font-weight: 300; color: #414042">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="hide-mobile" style="font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/56789d98-62b7-4316-bb31-d1cdb47e729e.png" alt="Section break" width="572" style="width: 572px; height: 2px" /></td>
+                                            <!--[if !mso 9]><!-->
+                                            <td class="hide-desktop" style="display: none; mso-hide: all; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/bd3fa891-95e4-4a6d-8bc3-d285029e1dc7.png" alt="Section break" width="100%" style="mso-hide: all" /></td>
+                                            <!--<![endif]-->
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 8px; padding-bottom: 24px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                    <p style="margin: 0px; text-align: left"><b style="font-weight: 900; font-size: 18px; line-height: 20px; mso-line-height-rule: exactly; mso-line-height-alt: 120%">press play</b></p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="px-2" style="padding-bottom: 0px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 100%; mso-line-height-rule: exactly; background: #ffffff">
+                                    <p style="margin: 0px; font-size: 36px; line-height: 38px; color: #f36d00; font-weight: 900; letter-spacing: -0.5px">get stress management <i>tips</i> from a Chicago Fire player.</p>
+                                    <p style="margin: 0px; margin-top: 16px; margin-bottom: 16px; mso-line-height-rule: exactly; mso-line-height-alt: 120%">Whole health starts with mental health. Many professional athletes would agree. Hear how Mauricio (Mauri) Pineda, defensive midfielder for the Chicago Fire, keeps his head clear on and off the&nbsp;pitch.</p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="px-2" style="padding-bottom: 50px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 10px; line-height: 20px; color: #414042; mso-line-height-alt: 100%; mso-line-height-rule: exactly; background: #ffffff">
+                                    <a href="https://www.facebook.com/chicagofire/videos/494102759970271/?rdid=anu6E6CsB6gjvil8" target="_blank">
+                                        <img class="fluid" src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/495a1506-4ed2-4c05-9aeb-b739e8baec84.jpg" width="572" alt="Play video featuring Chicago Fire player Mauricio Pineda" border="0" style="width: 100%; max-width: 572px; height: auto; background: #ffffff; display: inline-block" />
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 0px; padding-bottom: 0px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; font-weight: 300; color: #414042">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="hide-mobile" style="font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/56789d98-62b7-4316-bb31-d1cdb47e729e.png" alt="Section break" width="572" style="width: 572px; height: 2px" /></td>
+                                            <!--[if !mso 9]><!-->
+                                            <td class="hide-desktop" style="display: none; mso-hide: all; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/bd3fa891-95e4-4a6d-8bc3-d285029e1dc7.png" alt="Section break" width="100%" style="mso-hide: all" /></td>
+                                            <!--<![endif]-->
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 8px; padding-bottom: 24px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                    <p style="margin: 0px; text-align: left"><b style="font-weight: 900; font-size: 18px; line-height: 20px; mso-line-height-rule: exactly; mso-line-height-alt: 120%">benefits</b></p>
+                                    <!--[if mso]><p style="margin: 0; font-size: 1px; line-height: 1px">&nbsp;</p><![endif]-->
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="mso-line-height-rule: exactly; background-color: #ffffff; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                                        <tr>
+                                            <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 0px; padding-bottom: 24px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left">
+                                                    <tr>
+                                                        <td align="left" width="84" style="mso-line-height-alt: 100%; mso-line-height-rule: exactly">
+                                                            <img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/f03e5e66-dcd6-4f0f-af8b-f127a1a210cd.png" alt="Stethoscope icon" width="84" style="width: 84px; max-width: 84px; height: auto; margin: 0; display: block; border: 0; outline: none; mso-line-height-alt: 100%; mso-line-height-rule: exactly" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pd-center-padding-small pt-2" align="left" style="padding-top: 16px; padding-right: 16px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                            <p style="margin: 0px; font-size: 36px; line-height: 38px; color: #f36d00; font-weight: 900; letter-spacing: -0.5px">find a provider who speaks your <i>language</i>.</p>
+                                                            <p style="margin: 0px; margin-top: 16px; margin-bottom: 16px">It’s important to feel comfortable speaking to your primary care provider (PCP) about any health concerns. If Spanish is your first language, you can find a PCP who speaks it. Here’s&nbsp;how:</p>
+                                                            <!--[if mso]>
+                                                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                            <tr>
+                                                            <td valign="top" align="left" width="100%">
+                                                            <![endif]-->
+                                                            <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 100%">
+                                                                <tr>
+                                                                    <td class="pd-center-padding-small" align="left" style="padding-right: 14px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                                        <!--[if mso]>
+                                                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                                    <tr>
+                                                                    <td valign="top" align="center" width="100%">
+                                                                    <![endif]-->
+                                                                        <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 100%">
+                                                                            <tr>
+                                                                                <td class="pd-center-padding-small pl6" align="left" style="padding-left: 6px; padding-right: 0px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                        <tr>
+                                                                                            <td width="12" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">1.</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Use our online <a href="https://findaprovider.ilmeridian.com/location?utm_source=salesforce&utm_medium=email&utm_campaign=membership_retention&utm_term=current_medicaid_member&utm_content=september_language_provider" target="_blank" style="color: #414042; text-decoration: underline">Find a Provider</a> tool.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="12" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">2.</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Enter your preferred location, then click <i>Select your&nbsp;plan</i>.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="12" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">3.</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">A dropdown menu will appear. Click on <i>MeridianHealth: Medicaid</i>, then click&nbsp;<i>Continue</i>.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="12" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">4.</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Under Choose a Category, click <i>Medical Professionals</i>, then <i>Primary Care</i>, and select a specialty such as <i>Family Medicine</i>. A list of providers will&nbsp;appear.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="12" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px; padding-bottom: 16px">5.</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 4px; padding-bottom: 16px">On the left of this page under <i>Filter Options</i>, click <i>Additional Office Languages</i>, select <i>Spanish</i>, then click <i>Apply</i>. A list of Spanish&#8209;speaking providers in your area will&nbsp;appear.</td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <!--[if mso]>
+                                                                    </td>
+                                                                    </tr>
+                                                                    </table>
+                                                                    <![endif]-->
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!--[if mso]>
+                                                            </td>
+                                                            </tr>
+                                                            </table>
+                                                            <![endif]-->
+                                                            <p style="margin: 0px; margin-bottom: 16px">Remember, you can change your PCP at any&nbsp;time.</p>
+                                                            <p style="margin: 0px; margin-bottom: 1px">
+                                                                <a href="https://findaprovider.ilmeridian.com/location?utm_source=salesforce&utm_medium=email&utm_campaign=membership_retention&utm_term=current_medicaid_member&utm_content=september_language_provider_button" target="_blank"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/f8245054-1fad-4f86-95ba-d5cfc69a02af.png" width="144" height="40" border="0" alt="Find a provider" style="width: 144px; max-width: 144px; height: auto; display: inline-block; margin: 0; padding: 0; mso-line-height-alt: 100%; mso-line-height-rule: exactly" /></a>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="mso-line-height-rule: exactly; background-color: #ffffff; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                                        <tr>
+                                            <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 0px; padding-bottom: 32px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left">
+                                                    <tr>
+                                                        <td class="pd-center-padding-small" align="left" style="padding-right: 16px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                            <p style="margin: 0px; font-size: 36px; line-height: 38px; color: #f36d00; font-weight: 900; letter-spacing: -0.5px">encuentre un proveedor que hable su <i>idioma</i></p>
+                                                            <p style="margin: 0px; margin-top: 16px; margin-bottom: 16px">Es importante que se sienta a gusto hablando con su proveedor de atención primaria (PCP) sobre cualquier problema de salud. Si el español es su lengua materna, puede encontrar un PCP que lo hable. Aquí le explicamos&nbsp;cómo:</p>
+                                                            <!--[if mso]>
+                                                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                            <tr>
+                                                            <td valign="top" align="left" width="100%">
+                                                            <![endif]-->
+                                                            <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 100%">
+                                                                <tr>
+                                                                    <td class="pd-center-padding-small" align="left" style="padding-right: 14px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                                        <!--[if mso]>
+                                                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                                    <tr>
+                                                                    <td valign="top" align="center" width="100%">
+                                                                    <![endif]-->
+                                                                        <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 100%">
+                                                                            <tr>
+                                                                                <td class="pd-center-padding-small pl6" align="left" style="padding-left: 6px; padding-right: 0px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                        <tr>
+                                                                                            <td width="12" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">1.</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Utilice la herramienta en línea <a href="https://findaprovider.ilmeridian.com/location?utm_source=salesforce&utm_medium=email&utm_campaign=membership_retention&utm_term=current_medicaid_member&utm_content=september_language_provider_es" target="_blank" style="color: #414042; text-decoration: underline">Buscar un&nbsp;proveedor</a>.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="12" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">2.</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Ingrese su ubicación de preferencia y, a continuación, haga clic en <i>Seleccione su plan</i>.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="12" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">3.</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Aparecerá un menú desplegable. Haga clic en <i>MeridianHealth: Medicaid</i> y, luego, haga clic en <i>Continuar</i>.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="12" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">4.</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">En Elija una categoría, haga clic en <i>Profesionales médicos</i> y, a continuación, en <i>Atención primaria</i>, y seleccione una especialidad como <i>Medicina familiar</i>. Aparecerá una lista de&nbsp;proveedores.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="12" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px; padding-bottom: 16px">5.</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 4px; padding-bottom: 16px">A la izquierda de esta página, en <i>Opciones de filtro</i>, haga clic en <i>Idiomas adicionales del consultorio</i>, seleccione <i>Spanish (Español)</i> y, a continuación, haga clic en <i>Aplicar</i>. Aparecerá una lista de proveedores de habla hispana en su&nbsp;zona.</td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <!--[if mso]>
+                                                                    </td>
+                                                                    </tr>
+                                                                    </table>
+                                                                    <![endif]-->
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!--[if mso]>
+                                                        </td>
+                                                        </tr>
+                                                        </table>
+                                                        <![endif]-->
+                                                            <p style="margin: 0px; margin-bottom: 16px">Puede cambiar de PCP en cualquier momento siguiendo los pasos&nbsp;anteriores.</p>
+                                                            <p style="margin: 0px">
+                                                                <a href="https://findaprovider.ilmeridian.com/location?utm_source=salesforce&utm_medium=email&utm_campaign=membership_retention&utm_term=current_medicaid_member&utm_content=september_language_button_es" target="_blank"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/f7b4c6a3-4742-40f2-ab1c-afe98b038d2c.png" width="182" height="40" border="0" alt="Buscar un proveedor" style="width: 182px; max-width: 182px; height: auto; display: inline-block; margin: 0; padding: 0; mso-line-height-alt: 100%; mso-line-height-rule: exactly" /></a>
+                                                            </p>
+                                                            <!--[if mso]><p style="margin: 0; font-size: 1px; line-height: 1px">&nbsp;</p><![endif]-->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="mso-line-height-rule: exactly; background-color: #ffffff; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                                        <tr>
+                                            <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 0px; padding-bottom: 50px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left">
+                                                    <tr>
+                                                        <td align="left" width="84" style="mso-line-height-alt: 100%; mso-line-height-rule: exactly">
+                                                            <img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/86272c71-886a-4563-9b74-21276cd7d48b.png" alt="Mobile phone icon" width="84" style="width: 84px; max-width: 84px; height: auto; margin: 0; display: block; border: 0; outline: none; mso-line-height-alt: 100%; mso-line-height-rule: exactly" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pd-center-padding-small pt-2" align="left" style="padding-top: 16px; padding-right: 16px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                            <p style="margin: 0px; font-size: 36px; line-height: 38px; color: #f36d00; font-weight: 900; letter-spacing: -0.5px">get weight management <i>support</i> with&nbsp;WW.</p>
+                                                            <p style="margin: 0px; margin-top: 16px; margin-bottom: 16px">Your Meridian benefits can help you reach your healthiest weight. We’ve partnered with the WW program (formerly known as Weight Watchers) to guide you on your journey to healthy living. With WW you&nbsp;can:</p>
+                                                            <!--[if mso]>
+                                                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                            <tr>
+                                                            <td valign="top" align="left" width="100%">
+                                                            <![endif]-->
+                                                            <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 100%">
+                                                                <tr>
+                                                                    <td class="pd-center-padding-small" align="left" style="padding-right: 14px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                                        <!--[if mso]>
+                                                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                                    <tr>
+                                                                    <td valign="top" align="center" width="100%">
+                                                                    <![endif]-->
+                                                                        <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 100%">
+                                                                            <tr>
+                                                                                <td class="pd-center-padding-small pl6" align="left" style="padding-left: 6px; padding-right: 0px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                        <tr>
+                                                                                            <td width="10" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">•</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Choose a program to fit your&nbsp;needs.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="10" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">•</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Track your progress on the&nbsp;app.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="10" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px">•</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-bottom: 8px; padding-left: 4px">Get support in person and&nbsp;online.</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td width="10" valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 0px; padding-bottom: 16px">•</td>
+                                                                                            <td valign="top" style="background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly; text-align: left; padding-left: 4px; padding-bottom: 16px">Celebrate your&nbsp;successes.</td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <!--[if mso]>
+                                                                    </td>
+                                                                    </tr>
+                                                                    </table>
+                                                                    <![endif]-->
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!--[if mso]>
+                                                        </td>
+                                                        </tr>
+                                                        </table>
+                                                        <![endif]-->
+                                                            <p style="margin: 0px">Contact Member Services or your Care Coordinator to find out&nbsp;more.</p>
+                                                            <p style="margin: 0px; margin-top: 16px; margin-bottom: 16px">Learn more about this program in the Member&nbsp;Handbook.</p>
+                                                            <p style="margin: 0px">
+                                                                <a href="https://www.ilmeridian.com/members/medicaid/resources/handbooks-forms.html#handbook1?utm_source=salesforce&utm_medium=email&utm_campaign=membership_retention&utm_term=current_medicaid_member&utm_content=september_weight" target="_blank"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/2acbe0ac-a4a6-4641-8a8e-ba03d30ef10e.png" width="145" height="40" border="0" alt="Download now" style="width: 145px; max-width: 145px; height: auto; display: inline-block; margin: 0; padding: 0; mso-line-height-alt: 100%; mso-line-height-rule: exactly" /></a>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <!-- RECIPES -->
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 0px; padding-bottom: 0px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; font-weight: 300; color: #414042">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="hide-mobile" style="font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/56789d98-62b7-4316-bb31-d1cdb47e729e.png" alt="Section break" width="572" style="width: 572px; height: 2px" /></td>
+                                            <!--[if !mso 9]><!-->
+                                            <td class="hide-desktop" style="display: none; mso-hide: all; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/bd3fa891-95e4-4a6d-8bc3-d285029e1dc7.png" alt="Section break" width="100%" style="mso-hide: all" /></td>
+                                            <!--<![endif]-->
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 8px; padding-bottom: 16px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                    <p style="margin: 0px; text-align: left"><b style="font-weight: 900; font-size: 18px; line-height: 20px; mso-line-height-rule: exactly; mso-line-height-alt: 120%">recipes</b></p>
+                                    <!--[if mso]><p style="margin: 0; font-size: 1px; line-height: 1px">&nbsp;</p><![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="mso-line-height-rule: exactly; background-color: #ffffff; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+                                        <tr>
+                                            <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 0px; padding-bottom: 50px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                <!--[if mso]> <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%"> <tr> <td valign="top" align="center" width="196"> <![endif]-->
+                                                <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 196px">
+                                                    <tr>
+                                                        <td class="pd-center-padding-small" align="left" style="padding-right: 15px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 15px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                            <p style="margin: 0px; margin-bottom: 16px; font-size: 36px; line-height: 38px; color: #f36d00; font-weight: 900; letter-spacing: -0.5px">budget-friendly recipes that <i>kids</i> like, too!</p>
+                                                            <p style="margin: 0px; margin-top: 14px">Healthy eating is important at every age. Try these kid- and adult-approved recipes from the American Heart Association.</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if mso]> </td> <td valign="top" align="center" width="196"> <![endif]-->
+                                                <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 196px">
+                                                    <tr>
+                                                        <td class="pd-center-padding-small pt-2" align="left" style="padding-right: 15px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                            <p class="pt-1" style="margin: 0px; margin-bottom: 16px; font-size: 23px; line-height: 24px; color: #f36d00; font-weight: 900; letter-spacing: -0.7px">banana split <br class="hide-mobile" />berry yogurt <br class="hide-mobile" />parfaits</p>
+                                                            <img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/041c6848-28f8-45da-9a54-372d673a2d9b.png" alt="Parfait icon" width="84" style="width: 84px; max-width: 84px; height: auto; margin: 0; display: block; border: 0; outline: none; mso-line-height-alt: 100%; mso-line-height-rule: exactly" />
+                                                            <p style="margin: 0px; margin-top: 14px">A tasty twist on the classic banana split. This heart-healthy treat is great for a nutritious dessert.</p>
+                                                            <p style="margin: 0px; margin-top: 16px; mso-line-height-rule: exactly; mso-line-height-alt: 120%">
+                                                                <span class="pr-1" style="line-height: 34px"
+                                                                    ><a href="https://recipes.heart.org/en/recipes/banana-split-berry-yogurt-parfaits" target="_blank"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/4dcc343d-770f-490c-bb65-19325a5632e2.png" width="124" height="44" border="0" alt="View recipe" style="width: 124px; max-width: 124px; height: auto; display: inline-block; margin: 0; padding: 0; mso-line-height-alt: 100%; mso-line-height-rule: exactly" /></a
+                                                                ></span>
+                                                            </p>
+                                                            <!--[if mso]><p style="margin: 0; font-size: 1px; line-height: 1px">&nbsp;</p><![endif]-->
+                                                            <!--[if mso]><p style="margin: 0; font-size: 1px; line-height: 1px">&nbsp;</p><![endif]-->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if mso]> </td> <td valign="top" align="center" width="180"> <![endif]-->
+                                                <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="float: left; width: 180px">
+                                                    <tr>
+                                                        <td class="pd-center-padding-small pt-2" align="left" style="padding-right: 0px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                            <p class="pt-1" style="margin: 0px; margin-bottom: 16px; font-size: 23px; line-height: 24px; color: #f36d00; font-weight: 900; letter-spacing: -0.5px">fish sticks <br class="hide-mobile" />with tartar <br class="hide-mobile" />sauce</p>
+                                                            <img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/61b5c840-d9f6-4e70-9810-5708e5f64b1a.png" alt="Fish sticks icon" width="84" style="width: 84px; max-width: 84px; height: auto; margin: 0; display: block; border: 0; outline: none; mso-line-height-alt: 100%; mso-line-height-rule: exactly" />
+                                                            <p style="margin: 0px; margin-top: 14px">These baked fish sticks make a great dinner for the whole family. They’re packed with protein and are fun to eat.</p>
+                                                            <p style="margin: 0px; margin-top: 16px; mso-line-height-rule: exactly; mso-line-height-alt: 120%">
+                                                                <span class="pr-1" style="line-height: 34px"
+                                                                    ><a href="https://recipes.heart.org/en/recipes/fish-sticks-with-tartar-sauce" target="_blank"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/4dcc343d-770f-490c-bb65-19325a5632e2.png" width="124" height="44" border="0" alt="View recipe" style="width: 124px; max-width: 124px; height: auto; display: inline-block; margin: 0; padding: 0; mso-line-height-alt: 100%; mso-line-height-rule: exactly" /></a
+                                                                ></span>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!--[if mso]> </td> </tr> </table> <![endif]-->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 0px; padding-bottom: 0px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; font-weight: 300; color: #414042">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="hide-mobile" style="font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/56789d98-62b7-4316-bb31-d1cdb47e729e.png" alt="Section break" width="572" style="width: 572px; height: 2px" /></td>
+                                            <!--[if !mso 9]><!-->
+                                            <td class="hide-desktop" style="display: none; mso-hide: all; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/bd3fa891-95e4-4a6d-8bc3-d285029e1dc7.png" alt="Section break" width="100%" style="mso-hide: all" /></td>
+                                            <!--<![endif]-->
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 8px; padding-bottom: 24px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                    <p style="margin: 0px; text-align: left"><b style="font-weight: 900; font-size: 18px; line-height: 20px; mso-line-height-rule: exactly; mso-line-height-alt: 120%">upcoming event</b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-2" style="padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 10px; line-height: 20px; color: #414042; mso-line-height-alt: 100%; mso-line-height-rule: exactly; background: #ffffff"><img class="fluid" src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/57881111-057c-4c2b-aa20-8eaf1f317d1a.jpg" width="572" alt="Image of a man and a boy with a soccer ball" border="0" style="width: 100%; max-width: 572px; height: auto; background: #ffffff; display: inline-block" /></td>
+                            </tr>
+                            <tr>
+                                <td class="px-2" style="padding-bottom: 50px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; mso-line-height-alt: 100%; mso-line-height-rule: exactly; background: #ffffff">
+                                    <p style="margin: 0px; margin-top: 16px; font-size: 36px; line-height: 38px; color: #f36d00; font-weight: 900; letter-spacing: -0.5px">Meridian <i>presents</i> Chicago Fire’s Hispanic Heritage Night</p>
+                                    <p style="margin: 0px; margin-top: 16px; mso-line-height-rule: exactly; mso-line-height-alt: 120%">We’re excited to be the presenting sponsor again for Chicago Fire’s Hispanic Heritage Night celebration on <b style="font-weight: 900">Sat&#8205;urday, Sept&#8205;ember&nbsp;1&#8205;4</b>. This event celebrates the rich culture of Chicago’s Hispanic community. Fans will enjoy traditional Hispanic performances and receive giveaways. The Chicago Fire Foundation’s Kicks for Kids program, which Meridian is proud to support, provides free tickets, food vouchers, and a T-shirt to kids at this match and others throughout the&nbsp;season.</p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #414042; padding-top: 35px; padding-bottom: 35px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #ffffff">
+                                    <p style="margin: 0px; margin-top: 0px">Rewards and health actions are dependent on eligibility for specific activities, which will vary by individual. Members may not qualify for all health activities. The date of service to redeem a reward must be in the current plan year. Rewards can be redeemed up to 3&#8205;0 da&#8205;ys following the conclusion of the program&nbsp;period.</p>
+                                    <p style="margin: 0px; margin-top: 15px">Meridian complies with applicable Federal civil rights laws and does not discriminate on the basis of race, color, national origin, age, disability, or&nbsp;sex.</p>
+                                    <p style="margin: 0px; margin-top: 15px">
+                                        <b style="font-weight: 900">Español (Spanish):</b> ATENCIÓN: Si habla español, tiene a su disposición servicios gratuitos de asistencia lingüística. Llame al <a href="tel:866-606-3700" target="_blank" style="white-space: nowrap; color: #ffffff; text-decoration: underline"><b style="white-space: nowrap; color: #ffffff">8&zwj;66&#8209;6&zwj;06&#8209;37&zwj;00</b></a> (TTY:&nbsp;<a href="tel:711" target="_blank" style="white-space: nowrap; color: #ffffff; text-decoration: underline"><b style="white-space: nowrap; color: #ffffff">711</b></a
+                                        >).
+                                    </p>
+                                    <p style="margin: 0px; margin-top: 15px">
+                                        <b style="font-weight: 900">Polski (Polish):</b> UWAGA: Jeżeli mówisz po polsku, możesz skorzystać z bezpłatnej pomocy językowej. Zadzwoń pod numer <a href="tel:866-606-3700" target="_blank" style="white-space: nowrap; color: #ffffff; text-decoration: underline"><b style="white-space: nowrap; color: #ffffff">8&zwj;66&#8209;6&zwj;06&#8209;37&zwj;00</b></a> (TTY:&nbsp;<a href="tel:711" target="_blank" style="white-space: nowrap; color: #ffffff; text-decoration: underline"><b style="white-space: nowrap; color: #ffffff">711</b></a
+                                        >).
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 30px; padding-bottom: 0px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042">
+                                    <!--[if mso]> <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="572"> <tr> <td valign="top" width="340"> <![endif]-->
+                                    <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="340" style="float: left; width: 340px">
+                                        <tr>
+                                            <td align="left" style="padding-top: 0px; background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042">
+                                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+                                                    <tr>
+                                                        <td class="pb-0" align="left" style="padding-bottom: 15px; mso-line-height-alt: 120%; mso-line-height-rule: exactly; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042">
+                                                            <h2 style="margin: 0px; margin-bottom: 10px; font-size: 20px; line-height: 21px; color: #f36d00; font-weight: 900">contact us</h2>
+                                                            <p style="margin: 0px"><b style="font-weight: 900">Meridian Member Services</b></p>
+                                                            <p style="margin: 0px">
+                                                                <a href="tel:866-606-3700" target="_blank" style="text-decoration: underline; color: #414042; white-space: nowrap"><span>8&zwj;66&#8209;60&zwj;6&#8209;3&zwj;70&zwj;0</span></a>
+                                                            </p>
+                                                            <p style="margin: 0px">
+                                                                (TTY: <a href="tel:711" target="_blank" style="white-space: nowrap; color: #414042; text-decoration: underline"><span style="white-space: nowrap; color: #414042">711</span></a
+                                                                >)
+                                                            </p>
+                                                            <p style="margin: 0px">Mo&zwj;nd&zwj;ay–Fri&zwj;day, 8:0&zwj;0 a&zwj;.m. to 5&zwj;:0&zwj;0 p&zwj;.m.</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--[if mso]> </td> <td valign="top" width="232"> <![endif]-->
+                                    <table class="stack-column" role="presentation" border="0" cellpadding="0" cellspacing="0" width="232" style="float: left; width: 232px">
+                                        <tr>
+                                            <td class="pt-2" style="padding-top: 0px; background-color: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042">
+                                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+                                                    <tr>
+                                                        <td style="mso-line-height-alt: 120%; mso-line-height-rule: exactly; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042">
+                                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                <tr>
+                                                                    <td class="stack-column-center" align="right" style="padding-bottom: 10px; mso-line-height-alt: 120%; mso-line-height-rule: exactly; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/9e272113-d6f9-4a50-883e-5e830c7e96b3.jpg" alt="HealthChoice Illinois logo" width="98" height="34" style="width: 98px; max-width: 98px; height: 34px; margin: 0 auto" /></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="stack-column-center" align="right" style="padding-bottom: 10px; mso-line-height-alt: 120%; mso-line-height-rule: exactly; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042">
+                                                                        <p style="margin: 0px">
+                                                                            <a href="https://www.ilmeridian.com/?utm_source=salesforce&utm_medium=email&utm_campaign=membership_retention&utm_term=current_medicaid_member&utm_content=september_footer" style="color: #414042; text-decoration: underline" target="_blank"><b style="color: #414042; text-decoration: underline">ILmeridian.com</b></a>
+                                                                        </p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="stack-column-center pb-1" align="right" style="padding-bottom: 10px; mso-line-height-alt: 120%; mso-line-height-rule: exactly">
+                                                                        <a href="https://www.facebook.com/ILMeridian" target="_blank"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/3a41efab-305a-4b74-a701-22ca99c33cff.png" width="25" height="25" border="0" alt="Facebook icon" style="width: 25px; max-width: 25px; height: 25px; background: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; margin: 0" class="logo-center-on-narrow" /></a>&nbsp;&nbsp; <a href="https://www.instagram.com/ilmeridian/" target="_blank"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/b9561e03-31f1-43b3-b375-40e1014eb9aa.png" width="25" height="25" border="0" alt="Instagram icon" style="width: 25px; max-width: 25px; height: 25px; background: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; margin: 0" class="logo-center-on-narrow" /></a>&nbsp;&nbsp; <a href="https://twitter.com/ILMeridian" target="_blank"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/dcc10954-568b-4b7b-b9b7-f1020b0a8bb7.png" width="25" height="25" border="0" alt="X icon" style="width: 25px; max-width: 25px; height: 25px; background: #ffffff; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042; margin: 0" class="logo-center-on-narrow" /></a>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--[if mso]> </td> </tr> </table> <![endif]-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pd-center-padding" style="background-color: #ffffff; padding-top: 20px; padding-bottom: 0px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; font-weight: 300; color: #414042">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class="hide-mobile" style="font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/56789d98-62b7-4316-bb31-d1cdb47e729e.png" alt="Section break" width="572" style="width: 572px; height: 2px" /></td>
+                                            <!--[if !mso 9]><!-->
+                                            <td class="hide-desktop" style="display: none; mso-hide: all; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 4px; line-height: 4px; color: #414042"><img src="https://image.info.ilmeridian.com/lib/fe4a15707564057c741471/m/1/bd3fa891-95e4-4a6d-8bc3-d285029e1dc7.png" alt="Section break" width="100%" style="mso-hide: all" /></td>
+                                            <!--<![endif]-->
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pd-center-padding pt-2" style="background-color: #ffffff; padding-top: 20px; padding-bottom: 30px; padding-left: 54px; padding-right: 54px; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042">
+                                    <!--[if mso]> <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="572"> <tr> <td valign="top" width="362"> <![endif]-->
+                                    <table class="stack-column" align="left" role="presentation" border="0" cellpadding="0" cellspacing="0" width="362" style="width: 362px; float: left">
+                                        <tr>
+                                            <td align="left" style="margin: 0; text-align: left; mso-line-height-alt: 100%; mso-line-height-rule: exactly; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042">
+                                                <p style="margin: 0px; margin-top: 0px">
+                                                    <a style="color: #414042; text-decoration: none"><span>13&#8205;33 Burr Ridge Parkway, Suite 10&#8205;0, Burr&nbsp;Ridge,&nbsp;IL&nbsp;60&#8205;527</span></a>
+                                                </p>
+                                                <p style="margin: 0px; margin-top: 0px">&copy;20&zwj;24 Meridian. All Rights Reserved.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--[if mso]> </td> <td valign="top" width="210"> <![endif]-->
+                                    <table class="stack-column" align="right" role="presentation" border="0" cellpadding="0" cellspacing="0" width="210" style="width: 210px; float: right; background-color: #ffffff">
+                                        <tr>
+                                            <td valign="top" class="pt-1" align="right" style="margin: 0; text-align: right; mso-line-height-alt: 100%; mso-line-height-rule: exactly; font-family: museo-sans, Calibri, system-ui, Candara, Segoe, Segoe UI, Arial, sans-serif; font-size: 13px; line-height: 20px; font-weight: 300; color: #414042">
+                                                <p style="margin: 0px; mso-line-height-alt: 100%; mso-line-height-rule: exactly">
+                                                    <a href="https://www.ilmeridian.com/privacy-practices.html?utm_source=salesforce&utm_medium=email&utm_campaign=membership_retention&utm_term=current_medicaid_member&utm_content=september_footer" target="_blank" style="color: #414042; text-decoration: underline"><span>Privacy Policy</span></a
+                                                    >&nbsp;&nbsp;<a href="https://cloud.info.ilmeridian.com/newsletter-unsubscribe" target="_blank" style="color: #414042; text-decoration: underline"><span>Unsubscribe</span></a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--[if mso]> </td> </tr> </table> <![endif]-->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- End Content -->
+                    </td>
+                </tr>
+            </table>
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+        <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </body>
+</html>
